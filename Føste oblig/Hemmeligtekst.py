@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 11 22:46:15 2020
+_author_ Tor Erik Aasestad
+_email_ toraa@nmbu.no
 
-@author: Tor Erik
 """
 from turtle import *
 import time
-speed(0.5)
+speed(3)
 pensize(2)
 
-setup( width = 2000, height = 400, startx = None, starty = None)
+setup( width = 1500, height = 400, startx = None, starty = None)
 
 
 
@@ -30,7 +30,7 @@ def tegn_a():
 #tegn_a()
 #time.sleep(5)
 clear()
-home()
+penup(),home(),pendown()
 
 
 def tegn_b():
@@ -49,7 +49,7 @@ def tegn_b():
     setheading(0)
 
 def tegn_c():
-    left(90)
+    left(180)
     forward(15)
     for x in range(60):
         forward(2)
@@ -197,6 +197,12 @@ def tegn_q():
     forward(30)
     forward(-40)
 
+def tegn_r():
+    tegn_p()
+    setheading(0)
+    right(50)
+    forward(45)
+
 
 def tegn_t():
     left(90)
@@ -205,42 +211,38 @@ def tegn_t():
     forward(40)
     forward(-80)
     
+def tegn_u():
+    left(90)
+    penup(),forward(80), pendown()
+    right(180)
+    forward(30)
+    for halvsirkel in range (45):
+        forward(3)
+        left(4)
+    forward(30)
+
     
 def mellom_bokstaver():
-    color('white')
+    penup()
     setheading(0)
     sety(0)
     forward(100)    
-    color('black')
+    pendown()
+def mellom_ord():
+    mellom_bokstaver()
+    mellom_bokstaver()
+    
+    
 
-tegn_h()
-mellom_bokstaver()
-tegn_e()
-mellom_bokstaver()
-tegn_i()
-mellom_bokstaver()
-mellom_bokstaver()
-tegn_p()
-mellom_bokstaver()
-tegn_a()
-mellom_bokstaver()
-tegn_a()
-mellom_bokstaver()
-mellom_bokstaver()
-tegn_d()
-mellom_bokstaver()
-tegn_e()
-mellom_bokstaver()
-tegn_g()
-"""
-
-def hei():
+def hei_på_deg():
+    reset()
+    reset(), penup(), setx(-600),pendown()
     tegn_h()
     mellom_bokstaver()
     tegn_e()
     mellom_bokstaver()
-    tegn_i
-    mellom_bokstaver()
+    tegn_i()
+    mellom_ord()
     tegn_p()
     mellom_bokstaver()
     tegn_a()
@@ -253,4 +255,114 @@ def hei():
     tegn_e()
     mellom_bokstaver()
     tegn_g()
-"""
+    time.sleep(5)
+
+def flex_av_fritid():
+    reset()
+    tegn_a()
+    mellom_bokstaver()
+    tegn_b()
+    mellom_bokstaver()
+    mellom_bokstaver()
+    tegn_c()
+    mellom_bokstaver()
+    tegn_d()
+    mellom_bokstaver()
+    tegn_e()
+    time.sleep(10)
+    reset(), penup(), setx(-600),pendown()
+    tegn_f()
+    mellom_bokstaver()
+    tegn_g()
+    mellom_bokstaver()
+    tegn_h()
+    mellom_bokstaver()
+    tegn_i()
+    mellom_bokstaver()
+    tegn_j()
+    mellom_bokstaver()
+    tegn_k()
+    time.sleep(10)
+    reset(), penup(), setx(-600),pendown()
+    tegn_l()
+    mellom_bokstaver()
+    tegn_m()
+    mellom_bokstaver()
+    tegn_n()
+    mellom_bokstaver()
+    tegn_o()
+    mellom_bokstaver()
+    tegn_p()
+    mellom_bokstaver()
+    tegn_q()
+
+def fin_dag():
+    reset(), penup(),setx(-600),pendown()
+    tegn_h()
+    mellom_bokstaver()
+    tegn_a()
+    mellom_bokstaver()
+    tegn_a()
+    mellom_bokstaver()
+    tegn_p()
+    mellom_bokstaver()
+    tegn_e()
+    mellom_bokstaver()
+    tegn_r()
+    mellom_ord()
+    tegn_d()
+    mellom_bokstaver()
+    tegn_u()
+    time.sleep(4)
+    reset(), penup(), setx(-600),pendown()
+    mellom_ord()
+    tegn_h()
+    mellom_bokstaver()
+    tegn_a ()
+    mellom_bokstaver()
+    tegn_r()
+    mellom_ord()
+    tegn_e()
+    mellom_bokstaver()
+    tegn_n()
+    time.sleep(4)
+    reset(), penup(), setx(-600),pendown()
+    tegn_f()
+    mellom_bokstaver()
+    tegn_i()
+    mellom_bokstaver()
+    tegn_n()
+    mellom_ord()
+    tegn_d()
+    mellom_bokstaver()
+    tegn_a()
+    mellom_bokstaver()
+    tegn_g()
+    time.sleep(5)
+
+def keep_going():
+    reset(), penup(), setx(-600),pendown()
+    tegn_k()
+    mellom_bokstaver()
+    tegn_e()
+    mellom_bokstaver()
+    tegn_e()
+    mellom_bokstaver()
+    tegn_p()
+    mellom_ord()
+    tegn_g()
+    mellom_bokstaver()
+    tegn_o()
+    mellom_bokstaver()
+    tegn_i()
+    mellom_bokstaver()
+    tegn_n()
+    mellom_bokstaver()
+    tegn_g()
+    
+hei_på_deg()
+fin_dag()
+
+flex_av_fritid()
+keep_going()
+done()

@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Feb 10 21:50:14 2020
+# -*- coding: utf-8 -*-
 
-@author: Tor Erik
+_author_ Tor Erik Aasestad
+_email_ toraa@nmbu.no
 
-
-from turtle import *
-forward(90)
-left(45)
-forward(80)
 
 """
 #Her begynner oppgaven
@@ -25,7 +21,6 @@ x=(360/n)
 for m in range(0, n):
     forward(90)
     left(x)
-    print("okok")
 
 time.sleep(5)
 #Blomstedelen 
@@ -37,13 +32,9 @@ mangekantsrotasjon=360/antall_blader
 farge=['black', 'red', 'white' ]
 t=[10, 3, 1]
 
-for farge, t in zip(farge, t):
-    pencolor(farge)
-    pensize(t)
-    for mangekant in range(antall_blader):
-        for side in range(n):
-            print(n)
-            forward(100)
-            right(x)
-        right(mangekantsrotasjon)
-    
+for mangekant in range(antall_blader):
+    for side in range(n):5
+        forward(100)
+        right(x)
+    right(mangekantsrotasjon)
+time.sleep(10)
