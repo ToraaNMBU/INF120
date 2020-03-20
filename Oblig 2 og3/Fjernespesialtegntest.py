@@ -2,29 +2,18 @@
 """
 Created on Fri Mar  6 11:48:40 2020
 
-@author: Tor 
+@author: Tor Erik
 """
-#streng='Så!Fryktelig\fint,vær.'
 
-#print(streng.translate({ord(i): None for i in ',."\:;()-?!'}))
-#steng=streng.translate({ord(i): None for i in ',."\:;()-?!'})
-
+from ferdig_indeks import last_in_indeks  # Her laster vi inn en ferdig søkeindeks
+import webbrowser
 
 
 def fjern_spesialtegn(streng):
-    #[',', '.', '"', '\'', ':', ';', '(', ')', '-', '?', '!']``
-    
-    streng=streng.translate({ord(i): None for i in ',."\:;()-?!'})
+    liste_med_tegn=[',', '.', '"', '\'', ':', ';', '(', ')', '-', '?', '!']
+    for i in liste_med_tegn:
+        streng=streng.replace(i, " ")
     return streng
-
-f="jeg hater hei hater hater hater livet!!!!"
-a="Hei på deg bitchass livet"
-b="Per sier hei livet"
-c="hei Per livet!"
-d="hei livet geeshshsrg "
-e="livet"
-liste_med_dokumenter=[a,b,c,d,e,f]
-liste_av_mengder=[]
 
 def finn_unike_ord_i_streng(streng):
     streng=fjern_spesialtegn(streng)
@@ -32,48 +21,43 @@ def finn_unike_ord_i_streng(streng):
     streng=streng.strip()
     streng=streng.split()
     unike_ord=set(streng)
-    liste_av_mengder.append(unike_ord)
     return unike_ord
 
-
-#Denne delen må programeres inn i finn_felles_element_i_flere_mengder
-
-
 def finn_felles_ellement_i_flere_mengder(liste_av_mengder):
-    #Lager en tom liste
-    felles_element=[]
-    for i in range(len(liste_med_dokumenter))
-        finn_felles_ellement_i_flere_mengder(liste_med_dokumenter(i))
-    for set1 in range (len(liste_av_mengder)):
-        #felles for 1 og n
-        midlertidig=liste_av_mengder[0].intersection(liste_av_mengder[set1])
-        liste_av_mengder[0]=midlertidig
-    felles_liste=midlertidig
-    return felles_liste 
-
-finn_felles_ellement_i_flere_mengder()
-
-"""
-def søkeindeks_med_mengde(mengde_av_søkeord):
-    ord_som_søkes_etter=mengde_av_søkeord.split()
-    mulige_bøker={}
-    finn_felles_ellement_i_flere_mengder(liste_av_mengder)
-    
-    finn_unike_ord_i_streng()
-    #søker om ordet er i en liste
-    for i in range len(liste_av_mengder):
-        indeks=(i)
-        for x in len(ord_som_søkes_etter)
-            if ord_som_søkes_etter(x) in liste_mengder(i) == True:
-                mulige_bøker_append(indeks)
+    #Lager en tom liste for felles elementer og en for liste_av_megnder
+    felles_element=liste_av_mengder[0]
+    for antall in liste_av_mengder:
+        felles_element=felles_element.intersection(antall)
+    return felles_element 
+k=webbrowser.open('https://www.fhi.no/globalassets/dokumenterfiler/tema/koronavirussykdom/2871--cdc-alissa-eckert-ms_modifisert.png?preset=mainbodywidth')
+h=("DU har fått koronavirus!")
+def søk_i_indeks_med_mengde(indeks, mengde_av_søkeord):
+    """Denne Funkjsonen har som formål å søke opp alle bøker som inneholder søkeordene"""
+    mulige_bøker = []
+    for ord_ in mengde_av_søkeord:
+        if ord_ in indeks:
+                mulige_bøker.append(indeks[ord_])
+        else:
+            return set()
         
-            
-
+    mulige_bøker = finn_felles_ellement_i_flere_mengder(mulige_bøker)
     return mulige_bøker
-indeks=finn_felles_ellement_i_flere_mengder(HAHA)
 
+def klargjør_søkestreng(søkestreng):
+    return finn_unike_ord_i_streng(søkestreng)
 
-søkeord=("hei")
+def søk__indeks_med_streng(indeks, søkestreng):
+    for_søk =klargjør_søkestreng(søkestreng)
+    mulige_bøker = søk_i_indeks_med_mengde(indeks, for_søk)
+    return mulige_bøker
 
-søkeindeks_med_mengde(søkeord)
-"""
+if __name__ == "__main__":
+    søkestreng = "Sherlock Holmes scarlet"
+    indeks = last_in_indeks()  # Jeg (Yngve) har allerede lagd en indeks dere kan sø¸ke i
+                               # Den henter vi ut her.
+    k
+    
+    print(søk__indeks_med_streng(indeks, søkestreng))
+    print(h)
+    
+    

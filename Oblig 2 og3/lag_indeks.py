@@ -1,5 +1,5 @@
 from pathlib import Path
-import indeks_søk    # Kanskje du skal bruke noen av funksjonene du lagde her?
+import Fjernespesialtegntest.py    # Kanskje du skal bruke noen av funksjonene du lagde her?
 
 
 def finn_alle_unike_ord_i_liste_av_strenger(liste_av_strenger):
@@ -50,7 +50,9 @@ def finn_alle_unike_ord_i_liste_av_strenger(liste_av_strenger):
     
     Merk at rekkefølgen på ordene ikke spiller noen rolle!
     """
-    unike_ord = None  # Slett denne linja
+    for i in range(len(liste_av_mengder)):
+        liste_av_mengder[i]=finn_unike_ord_i_streng(liste_av_mengder[i])
+    unike_ord = liste_av_mengder
     # Skriv kode her
 
     return unike_ord

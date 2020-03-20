@@ -8,3 +8,4 @@ def last_in_indeks(indeksfil=None):
     indeksfil = Path(indeksfil)
     with indeksfil.open('rb') as indeks_fil:
         return pickle.load(indeks_fil)
+    

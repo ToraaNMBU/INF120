@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 10 21:34:22 2020
+
+@author: Tor Erik
+"""
+
 # -*-coding: utf-8 -*-
 
 from ferdig_indeks import last_in_indeks  # Her laster vi inn en ferdig sÃ¸keindeks
